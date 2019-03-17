@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="adr1" class="farm.model.di.Address">
+    	<property name="village" value="Tanjungsari"></property>
+    	<property name="city" value="Batu"></property>
+    	<property name="homeNo" value="31"></property>
+    </bean>
+    
+    <bean id="adr2" class="farm.model.di.Address">
+    	<property name="village" value="Cisarua"></property>
+    	<property name="city" value="Bogor"></property>
+    	<property name="homeNo" value="13"></property>
+    </bean>
+    
+    <bean id="adr3" class="farm.model.di.Address">
+    	<property name="village" value="Lembang"></property>
+    	<property name="city" value="Bandung"></property>
+    	<property name="homeNo" value="28"></property>
+    </bean>
+    
+    <bean id="anm1" class="farm.model.di.Animal">
+    	<property name="species" value="Rabbit"></property>
+    	<property name="products" value="meat"></property>
+    	<property name="numOf" value="28"></property>
+    	<property name="food" value="10 kg carrots"></property>
+    </bean>
+    
+    <bean id="anm2" class="farm.model.di.Animal">
+    	<property name="species" value="Horse"></property>
+    	<property name="products" value="energy"></property>
+    	<property name="numOf" value="20"></property>
+    	<property name="food" value="100 packs fresh grass"></property>
+    </bean>
+    
+    <bean id="anm3" class="farm.model.di.Animal">
+    	<property name="species" value="Duck"></property>
+    	<property name="products" value="egg"></property>
+    	<property name="numOf" value="100"></property>
+    	<property name="food" value="10 tons cracked corn"></property>
+    </bean>
+
+    <bean id="farm1" class="farm.model.di.Farm">   
+    	<property name="fname" value="Rabbit House"></property>
+        <!-- Dependency Injection -->
+        <property name="faddress" ref="adr1"></property>
+        <property name="animals" ref="anm1"></property>
+        <!-- constructor-arg ref="adr1"></constructor-arg>
+        <constructor-arg ref="anm1"></constructor-arg -->
+    </bean>
+    
+    <bean id="farm2" class="farm.model.di.Farm">   
+    	<property name="fname" value="D'Ranch"></property>
+        <!-- Dependency Injection -->
+        <property name="faddress" ref="adr2"></property>
+        <property name="animals" ref="anm2"></property>
+        <!-- constructor-arg ref="adr2"></constructor-arg>
+        <constructor-arg ref="anm2"></constructor-arg -->
+    </bean>
+    
+    <bean id="farm3" class="farm.model.di.Farm">   
+    	<property name="fname" value="The Duck King"></property>
+        <!-- Dependency Injection -->
+        <property name="faddress" ref="adr3"></property>
+        <property name="animals" ref="anm3"></property>
+        <!-- constructor-arg ref="adr3"></constructor-arg>
+        <constructor-arg ref="anm3"></constructor-arg -->
+    </bean>
+    
+</beans>
