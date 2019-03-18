@@ -1,5 +1,9 @@
 package farm.model.di;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Farm {
 	String fname;
 	Address faddress;
@@ -10,10 +14,12 @@ public class Farm {
 	}
 	
 	// injection from conf
+	@Autowired
 	public Farm(Animal animals) {
 		this.animals = animals;
 	}
 	
+	@Autowired
 	public Farm(Address faddress) {
 		this.faddress = faddress;
 	}

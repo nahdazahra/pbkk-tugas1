@@ -3,6 +3,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <context:component-scan base-package="farm.model.di" />
 
     <bean id="adr1" class="farm.model.di.Address">
     	<property name="village" value="Tanjungsari"></property>
